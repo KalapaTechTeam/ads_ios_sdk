@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BannerDemoViewController" customModule="KalapaAdsDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="adUnitLabel" destination="Ban-006" id="Ban-021"/>
+                <outlet property="slotView" destination="Ban-007" id="Ban-022"/>
+                <outlet property="statusBadge" destination="Ban-010" id="Ban-023"/>
+                <outlet property="logTextView" destination="Ban-020" id="Ban-024"/>
+                <outlet property="view" destination="Ban-001" id="Ban-025"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Ban-001">
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" userLabel="Content" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-003">
+                    <rect key="frame" x="20" y="71" width="353" height="735"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" userLabel="Ad unit" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-004">
+                            <rect key="frame" x="0" y="0" width="353" height="33"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="AD UNIT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-005">
+                                    <rect key="frame" x="0" y="0" width="353" height="13.33"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                    <color key="textColor" name="TextSecondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="—" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" userLabel="Ad unit id" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-006">
+                                    <rect key="frame" x="0" y="17.33" width="353" height="15.67"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                    <color key="textColor" name="TextPrimary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" userLabel="Slot" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-007">
+                            <rect key="frame" x="0" y="49" width="353" height="82"/>
+                            <color key="backgroundColor" name="Card"/>
+                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="16"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="82" relation="greaterThanOrEqual" id="Ban-026"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="8" alignment="center" userLabel="Status row" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-008">
+                            <rect key="frame" x="0" y="147" width="353" height="22.33"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Trạng thái" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-009">
+                                    <rect key="frame" x="0" y="3.33" width="60.67" height="15.67"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" name="TextSecondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" customClass="StatusBadgeView" customModuleProvider="target" userLabel="Status badge" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-010">
+                                    <rect key="frame" x="68.67" y="0" width="68.67" height="22.33"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Chưa tải" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" userLabel="Status text" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-011">
+                                            <rect key="frame" x="10.0" y="4.0" width="48.67" height="14.33"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <color key="textColor" name="TextSecondary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="10"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                    <connections><outlet property="textLabel" destination="Ban-011" id="Ban-012"/></connections>
+                                    <constraints>
+                                        <constraint firstItem="Ban-011" firstAttribute="top" secondItem="Ban-010" secondAttribute="top" constant="4" id="Ban-027"/>
+                                        <constraint firstItem="Ban-011" firstAttribute="leading" secondItem="Ban-010" secondAttribute="leading" constant="10" id="Ban-028"/>
+                                        <constraint firstAttribute="trailing" secondItem="Ban-011" secondAttribute="trailing" constant="10" firstItem="Ban-010" id="Ban-029"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ban-011" secondAttribute="bottom" constant="4" firstItem="Ban-010" id="Ban-030"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" userLabel="Spacer" horizontalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-013">
+                                    <rect key="frame" x="145.33" y="11.33" width="207.67" height="0"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" userLabel="Reload" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-014">
+                            <rect key="frame" x="0" y="185.33" width="353" height="48"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Tải lại banner" cornerStyle="large"><fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/><color key="baseBackgroundColor" name="Primary"/></buttonConfiguration>
+                            <connections><action selector="didTapReload" destination="-1" eventType="touchUpInside" id="Ban-015"/></connections>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="Ban-031"/>
+                            </constraints>
+                        </button>
+                        <view contentMode="scaleToFill" userLabel="Event log" verticalHuggingPriority="200" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-016">
+                            <rect key="frame" x="0" y="249.33" width="353" height="485.67"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nhật ký sự kiện" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-017">
+                                    <rect key="frame" x="16.0" y="14" width="109.67" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="textColor" name="TextPrimary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" userLabel="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-018">
+                                    <rect key="frame" x="297.67" y="7.67" width="49.33" height="31"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Xoá" cornerStyle="large"><fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/><color key="baseForegroundColor" name="Primary"/></buttonConfiguration>
+                                    <connections><action selector="didTapClearLog" destination="-1" eventType="touchUpInside" id="Ban-019"/></connections>
+                                </button>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" userLabel="Log text" translatesAutoresizingMaskIntoConstraints="NO" id="Ban-020">
+                                    <rect key="frame" x="10" y="38.0" width="333" height="437.67"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" name="Card"/>
+                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="16"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                            <constraints>
+                                <constraint firstItem="Ban-017" firstAttribute="top" secondItem="Ban-016" secondAttribute="top" constant="14" id="Ban-032"/>
+                                <constraint firstItem="Ban-017" firstAttribute="leading" secondItem="Ban-016" secondAttribute="leading" constant="16" id="Ban-033"/>
+                                <constraint firstItem="Ban-016" firstAttribute="trailing" secondItem="Ban-018" secondAttribute="trailing" constant="6" id="Ban-034"/>
+                                <constraint firstItem="Ban-018" firstAttribute="centerY" secondItem="Ban-017" secondAttribute="centerY" id="Ban-035"/>
+                                <constraint firstItem="Ban-020" firstAttribute="top" secondItem="Ban-017" secondAttribute="bottom" constant="6" id="Ban-036"/>
+                                <constraint firstItem="Ban-020" firstAttribute="leading" secondItem="Ban-016" secondAttribute="leading" constant="10" id="Ban-037"/>
+                                <constraint firstItem="Ban-016" firstAttribute="trailing" secondItem="Ban-020" secondAttribute="trailing" constant="10" id="Ban-038"/>
+                                <constraint firstItem="Ban-016" firstAttribute="bottom" secondItem="Ban-020" secondAttribute="bottom" constant="10" id="Ban-039"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <viewLayoutGuide key="safeArea" id="Ban-002"/>
+            <color key="backgroundColor" name="Background"/>
+            <constraints>
+                <constraint firstItem="Ban-003" firstAttribute="top" secondItem="Ban-002" secondAttribute="top" constant="12" id="Ban-040"/>
+                <constraint firstItem="Ban-003" firstAttribute="leading" secondItem="Ban-002" secondAttribute="leading" constant="20" id="Ban-041"/>
+                <constraint firstItem="Ban-002" firstAttribute="trailing" secondItem="Ban-003" secondAttribute="trailing" constant="20" id="Ban-042"/>
+                <constraint firstItem="Ban-002" firstAttribute="bottom" secondItem="Ban-003" secondAttribute="bottom" constant="12" id="Ban-043"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Background"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="Card"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="IconBackground"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="Primary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="TextPrimary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="TextSecondary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+    </resources>
+</document>

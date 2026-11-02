@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NativeDemoViewController" customModule="KalapaAdsDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="adUnitLabel" destination="Nat-006" id="Nat-026"/>
+                <outlet property="statusBadge" destination="Nat-011" id="Nat-028"/>
+                <outlet property="logTextView" destination="Nat-025" id="Nat-030"/>
+                <outlet property="slotsStack" destination="Nat-007" id="Nat-SlO"/>
+                <outlet property="view" destination="Nat-001" id="Nat-033"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Nat-001">
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" userLabel="Scroll" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-Scr">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" userLabel="Content" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-003">
+                        <rect key="frame" x="20" y="71" width="353" height="735"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" userLabel="Ad unit" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-004">
+                                <rect key="frame" x="0" y="0" width="353" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="AD UNIT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-005">
+                                        <rect key="frame" x="0" y="0" width="353" height="13.33"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                        <color key="textColor" name="TextSecondary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="—" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" userLabel="Ad unit id" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-006">
+                                        <rect key="frame" x="0" y="17.33" width="353" height="15.67"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                        <color key="textColor" name="TextPrimary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" userLabel="Slots" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-007">
+                                <rect key="frame" x="0" y="117.33" width="353" height="112"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="8" alignment="center" userLabel="Status row" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-009">
+                                <rect key="frame" x="0" y="245.33" width="353" height="22.33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Trạng thái" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-010">
+                                        <rect key="frame" x="0" y="3.33" width="60.67" height="15.67"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" name="TextSecondary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" customClass="StatusBadgeView" customModuleProvider="target" userLabel="Status badge" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-011">
+                                        <rect key="frame" x="68.67" y="0" width="80" height="22.33"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Chưa tải" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" userLabel="Status text" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-012">
+                                                <rect key="frame" x="10" y="4.0" width="60" height="14.33"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                <color key="textColor" name="TextSecondary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="10"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                        <connections><outlet property="textLabel" destination="Nat-012" id="Nat-013"/></connections>
+                                        <constraints>
+                                            <constraint firstItem="Nat-012" firstAttribute="top" secondItem="Nat-011" secondAttribute="top" constant="4" id="Nat-037"/>
+                                            <constraint firstItem="Nat-012" firstAttribute="leading" secondItem="Nat-011" secondAttribute="leading" constant="10" id="Nat-038"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nat-012" secondAttribute="trailing" constant="10" firstItem="Nat-011" id="Nat-039"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nat-012" secondAttribute="bottom" constant="4" firstItem="Nat-011" id="Nat-040"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" userLabel="Spacer" horizontalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-014">
+                                        <rect key="frame" x="156.67" y="11.33" width="196.33" height="0"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" userLabel="Reload" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-019">
+                                <rect key="frame" x="0" y="283.67" width="353" height="48"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Tải lại quảng cáo" cornerStyle="large"><fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/><color key="baseBackgroundColor" name="Primary"/></buttonConfiguration>
+                                <connections><action selector="didTapReload" destination="-1" eventType="touchUpInside" id="Nat-020"/></connections>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Nat-041"/>
+                                </constraints>
+                            </button>
+                            <view contentMode="scaleToFill" userLabel="Event log" verticalHuggingPriority="200" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-021">
+                                <rect key="frame" x="0" y="347.67" width="353" height="387.33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nhật ký sự kiện" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-022">
+                                        <rect key="frame" x="16.0" y="14" width="109.67" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                        <color key="textColor" name="TextPrimary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" userLabel="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-023">
+                                        <rect key="frame" x="297.67" y="7.67" width="49.33" height="31"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Xoá" cornerStyle="large"><fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/><color key="baseForegroundColor" name="Primary"/></buttonConfiguration>
+                                        <connections><action selector="didTapClearLog" destination="-1" eventType="touchUpInside" id="Nat-024"/></connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" userLabel="Log text" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-025">
+                                        <rect key="frame" x="10" y="38" width="333" height="339.33"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" name="Card"/>
+                                <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="16"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="Nat-LogH"/>
+                                    <constraint firstItem="Nat-022" firstAttribute="top" secondItem="Nat-021" secondAttribute="top" constant="14" id="Nat-042"/>
+                                    <constraint firstItem="Nat-022" firstAttribute="leading" secondItem="Nat-021" secondAttribute="leading" constant="16" id="Nat-043"/>
+                                    <constraint firstItem="Nat-021" firstAttribute="trailing" secondItem="Nat-023" secondAttribute="trailing" constant="6" id="Nat-044"/>
+                                    <constraint firstItem="Nat-023" firstAttribute="centerY" secondItem="Nat-022" secondAttribute="centerY" id="Nat-045"/>
+                                    <constraint firstItem="Nat-025" firstAttribute="top" secondItem="Nat-022" secondAttribute="bottom" constant="6" id="Nat-046"/>
+                                    <constraint firstItem="Nat-025" firstAttribute="leading" secondItem="Nat-021" secondAttribute="leading" constant="10" id="Nat-047"/>
+                                    <constraint firstItem="Nat-021" firstAttribute="trailing" secondItem="Nat-025" secondAttribute="trailing" constant="10" id="Nat-048"/>
+                                    <constraint firstItem="Nat-021" firstAttribute="bottom" secondItem="Nat-025" secondAttribute="bottom" constant="10" id="Nat-049"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                    </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Nat-003" firstAttribute="top" secondItem="Nat-ScC" secondAttribute="top" constant="12" id="Nat-050"/>
+                        <constraint firstItem="Nat-003" firstAttribute="leading" secondItem="Nat-ScC" secondAttribute="leading" constant="20" id="Nat-051"/>
+                        <constraint firstItem="Nat-ScC" firstAttribute="trailing" secondItem="Nat-003" secondAttribute="trailing" constant="20" id="Nat-052"/>
+                        <constraint firstItem="Nat-ScC" firstAttribute="bottom" secondItem="Nat-003" secondAttribute="bottom" constant="12" id="Nat-053"/>
+                        <constraint firstItem="Nat-003" firstAttribute="width" secondItem="Nat-ScF" secondAttribute="width" constant="-40" id="Nat-ScW"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Nat-ScC"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Nat-ScF"/>
+                </scrollView>
+            </subviews>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <viewLayoutGuide key="safeArea" id="Nat-002"/>
+            <color key="backgroundColor" name="Background"/>
+            <constraints>
+                <constraint firstItem="Nat-Scr" firstAttribute="top" secondItem="Nat-002" secondAttribute="top" id="Nat-ScT"/>
+                <constraint firstItem="Nat-Scr" firstAttribute="leading" secondItem="Nat-002" secondAttribute="leading" id="Nat-ScL"/>
+                <constraint firstItem="Nat-002" firstAttribute="trailing" secondItem="Nat-Scr" secondAttribute="trailing" id="Nat-ScR"/>
+                <constraint firstItem="Nat-002" firstAttribute="bottom" secondItem="Nat-Scr" secondAttribute="bottom" id="Nat-ScB"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.up.chevron.down" catalog="system" width="128" height="128"/>
+        <namedColor name="Background"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="Card"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="IconBackground"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="Primary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="TextPrimary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="TextSecondary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+    </resources>
+</document>

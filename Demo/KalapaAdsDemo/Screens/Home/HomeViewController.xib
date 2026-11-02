@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="KalapaAdsDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="versionLabel" destination="Hom-039" id="Hom-040"/>
+                <outlet property="view" destination="Hom-001" id="Hom-041"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Hom-001">
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" userLabel="Scroll" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-Scr">
+                    <rect key="frame" x="0.0" y="59" width="393" height="725.67"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="AppLogo" userLabel="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-003">
+                            <rect key="frame" x="20" y="75" width="102" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="Hom-042"/>
+                                <constraint firstAttribute="width" constant="102" id="Hom-043"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Kalapa Ads Demo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-004">
+                            <rect key="frame" x="20" y="139" width="353" height="28.67"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <color key="textColor" name="TextPrimary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Chọn loại quảng cáo để thử trên thiết bị." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-005">
+                            <rect key="frame" x="20" y="173.67" width="353" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" name="TextSecondary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" userLabel="Cards" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-006">
+                            <rect key="frame" x="20" y="218.67" width="353" height="356"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" customClass="TapCardControl" customModuleProvider="target" userLabel="Native Ads card" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-007">
+                                    <rect key="frame" x="0" y="0" width="353" height="80"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" userLabel="Icon background" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-008">
+                                            <rect key="frame" x="16" y="16" width="48" height="48"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="rectangle.grid.1x2.fill" catalog="system" userLabel="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-009">
+                                                    <rect key="frame" x="11" y="12.67" width="26" height="23.0"/>
+                                                    <color key="tintColor" name="Primary"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="Hom-044"/>
+                                                        <constraint firstAttribute="height" constant="26" id="Hom-045"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="IconBackground"/>
+                                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="24"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="Hom-046"/>
+                                                <constraint firstAttribute="height" constant="48" id="Hom-047"/>
+                                                <constraint firstItem="Hom-009" firstAttribute="centerX" secondItem="Hom-008" secondAttribute="centerX" id="Hom-048"/>
+                                                <constraint firstItem="Hom-009" firstAttribute="centerY" secondItem="Hom-008" secondAttribute="centerY" id="Hom-049"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" userLabel="Texts" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-010">
+                                            <rect key="frame" x="78" y="21.67" width="199" height="37"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Native Ads" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-011">
+                                                    <rect key="frame" x="0" y="0" width="199" height="19.33"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" name="TextPrimary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Strip · Promo card · Product card" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-012">
+                                                    <rect key="frame" x="0" y="21.33" width="199" height="15.67"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" name="TextSecondary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.right" catalog="system" userLabel="Chevron" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-013">
+                                            <rect key="frame" x="325" y="34" width="10" height="12.33"/>
+                                            <color key="tintColor" systemColor="systemGray3Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="Hom-050"/>
+                                                <constraint firstAttribute="height" constant="16" id="Hom-051"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="Card"/>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="16"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                    <connections><action selector="didTapNative" destination="-1" eventType="touchUpInside" id="Hom-014"/></connections>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="Hom-052"/>
+                                        <constraint firstItem="Hom-008" firstAttribute="leading" secondItem="Hom-007" secondAttribute="leading" constant="16" id="Hom-053"/>
+                                        <constraint firstItem="Hom-008" firstAttribute="centerY" secondItem="Hom-007" secondAttribute="centerY" id="Hom-054"/>
+                                        <constraint firstItem="Hom-010" firstAttribute="leading" secondItem="Hom-008" secondAttribute="trailing" constant="14" id="Hom-055"/>
+                                        <constraint firstItem="Hom-010" firstAttribute="centerY" secondItem="Hom-007" secondAttribute="centerY" id="Hom-056"/>
+                                        <constraint firstItem="Hom-013" firstAttribute="leading" secondItem="Hom-010" secondAttribute="trailing" constant="8" relation="greaterThanOrEqual" id="Hom-057"/>
+                                        <constraint firstItem="Hom-007" firstAttribute="trailing" secondItem="Hom-013" secondAttribute="trailing" constant="18" id="Hom-058"/>
+                                        <constraint firstItem="Hom-013" firstAttribute="centerY" secondItem="Hom-007" secondAttribute="centerY" id="Hom-059"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" customClass="TapCardControl" customModuleProvider="target" userLabel="SwiftUI card" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-015">
+                                    <rect key="frame" x="0" y="92.0" width="353" height="80"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" userLabel="Icon background" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-016">
+                                            <rect key="frame" x="16" y="16" width="48" height="48"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="swift" catalog="system" userLabel="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-017">
+                                                    <rect key="frame" x="11" y="12.0" width="26" height="24.33"/>
+                                                    <color key="tintColor" name="Primary"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="Hom-060"/>
+                                                        <constraint firstAttribute="height" constant="26" id="Hom-061"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="IconBackground"/>
+                                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="24"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="Hom-062"/>
+                                                <constraint firstAttribute="height" constant="48" id="Hom-063"/>
+                                                <constraint firstItem="Hom-017" firstAttribute="centerX" secondItem="Hom-016" secondAttribute="centerX" id="Hom-064"/>
+                                                <constraint firstItem="Hom-017" firstAttribute="centerY" secondItem="Hom-016" secondAttribute="centerY" id="Hom-065"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" userLabel="Texts" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-018">
+                                            <rect key="frame" x="78.0" y="21.67" width="214.33" height="37"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="SwiftUI" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-019">
+                                                    <rect key="frame" x="0" y="0" width="214.33" height="19.33"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" name="TextPrimary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nhúng native ad bằng NativeAdSlot" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-020">
+                                                    <rect key="frame" x="0" y="21.33" width="214.33" height="15.67"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" name="TextSecondary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.right" catalog="system" userLabel="Chevron" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-021">
+                                            <rect key="frame" x="325" y="34" width="10" height="12.33"/>
+                                            <color key="tintColor" systemColor="systemGray3Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="Hom-066"/>
+                                                <constraint firstAttribute="height" constant="16" id="Hom-067"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="Card"/>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="16"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                    <connections><action selector="didTapSwiftUI" destination="-1" eventType="touchUpInside" id="Hom-022"/></connections>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="Hom-068"/>
+                                        <constraint firstItem="Hom-016" firstAttribute="leading" secondItem="Hom-015" secondAttribute="leading" constant="16" id="Hom-069"/>
+                                        <constraint firstItem="Hom-016" firstAttribute="centerY" secondItem="Hom-015" secondAttribute="centerY" id="Hom-070"/>
+                                        <constraint firstItem="Hom-018" firstAttribute="leading" secondItem="Hom-016" secondAttribute="trailing" constant="14" id="Hom-071"/>
+                                        <constraint firstItem="Hom-018" firstAttribute="centerY" secondItem="Hom-015" secondAttribute="centerY" id="Hom-072"/>
+                                        <constraint firstItem="Hom-021" firstAttribute="leading" secondItem="Hom-018" secondAttribute="trailing" constant="8" relation="greaterThanOrEqual" id="Hom-073"/>
+                                        <constraint firstItem="Hom-015" firstAttribute="trailing" secondItem="Hom-021" secondAttribute="trailing" constant="18" id="Hom-074"/>
+                                        <constraint firstItem="Hom-021" firstAttribute="centerY" secondItem="Hom-015" secondAttribute="centerY" id="Hom-075"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" customClass="TapCardControl" customModuleProvider="target" userLabel="Banner card" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-023">
+                                    <rect key="frame" x="0" y="184.0" width="353" height="80"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" userLabel="Icon background" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-024">
+                                            <rect key="frame" x="16" y="16" width="48" height="48"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="rectangle.bottomhalf.filled" catalog="system" userLabel="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-025">
+                                                    <rect key="frame" x="11" y="12.67" width="26" height="23.0"/>
+                                                    <color key="tintColor" name="Primary"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="Hom-076"/>
+                                                        <constraint firstAttribute="height" constant="26" id="Hom-077"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="IconBackground"/>
+                                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="24"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="Hom-078"/>
+                                                <constraint firstAttribute="height" constant="48" id="Hom-079"/>
+                                                <constraint firstItem="Hom-025" firstAttribute="centerX" secondItem="Hom-024" secondAttribute="centerX" id="Hom-080"/>
+                                                <constraint firstItem="Hom-025" firstAttribute="centerY" secondItem="Hom-024" secondAttribute="centerY" id="Hom-081"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" userLabel="Texts" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-026">
+                                            <rect key="frame" x="78" y="21.67" width="239" height="37"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Banner" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-027">
+                                                    <rect key="frame" x="0" y="0" width="239" height="19.33"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" name="TextPrimary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Quảng cáo HTML hiển thị trong WebView" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-028">
+                                                    <rect key="frame" x="0" y="21.33" width="239" height="15.67"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" name="TextSecondary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.right" catalog="system" userLabel="Chevron" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-029">
+                                            <rect key="frame" x="325" y="34" width="10" height="12.33"/>
+                                            <color key="tintColor" systemColor="systemGray3Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="Hom-082"/>
+                                                <constraint firstAttribute="height" constant="16" id="Hom-083"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="Card"/>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="16"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                    <connections><action selector="didTapBanner" destination="-1" eventType="touchUpInside" id="Hom-030"/></connections>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="Hom-084"/>
+                                        <constraint firstItem="Hom-024" firstAttribute="leading" secondItem="Hom-023" secondAttribute="leading" constant="16" id="Hom-085"/>
+                                        <constraint firstItem="Hom-024" firstAttribute="centerY" secondItem="Hom-023" secondAttribute="centerY" id="Hom-086"/>
+                                        <constraint firstItem="Hom-026" firstAttribute="leading" secondItem="Hom-024" secondAttribute="trailing" constant="14" id="Hom-087"/>
+                                        <constraint firstItem="Hom-026" firstAttribute="centerY" secondItem="Hom-023" secondAttribute="centerY" id="Hom-088"/>
+                                        <constraint firstItem="Hom-029" firstAttribute="leading" secondItem="Hom-026" secondAttribute="trailing" constant="8" relation="greaterThanOrEqual" id="Hom-089"/>
+                                        <constraint firstItem="Hom-023" firstAttribute="trailing" secondItem="Hom-029" secondAttribute="trailing" constant="18" id="Hom-090"/>
+                                        <constraint firstItem="Hom-029" firstAttribute="centerY" secondItem="Hom-023" secondAttribute="centerY" id="Hom-091"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" customClass="TapCardControl" customModuleProvider="target" userLabel="Interstitial card" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-031">
+                                    <rect key="frame" x="0" y="276" width="353" height="80"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" userLabel="Icon background" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-032">
+                                            <rect key="frame" x="16" y="16" width="48" height="48"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="rectangle.portrait.fill" catalog="system" userLabel="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-033">
+                                                    <rect key="frame" x="11" y="11.33" width="26" height="25.67"/>
+                                                    <color key="tintColor" name="Primary"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="Hom-092"/>
+                                                        <constraint firstAttribute="height" constant="26" id="Hom-093"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="IconBackground"/>
+                                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="24"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="Hom-094"/>
+                                                <constraint firstAttribute="height" constant="48" id="Hom-095"/>
+                                                <constraint firstItem="Hom-033" firstAttribute="centerX" secondItem="Hom-032" secondAttribute="centerX" id="Hom-096"/>
+                                                <constraint firstItem="Hom-033" firstAttribute="centerY" secondItem="Hom-032" secondAttribute="centerY" id="Hom-097"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" userLabel="Texts" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-034">
+                                            <rect key="frame" x="78.0" y="21.67" width="154.67" height="37"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Interstitial" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-035">
+                                                    <rect key="frame" x="0" y="0" width="154.67" height="19.33"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" name="TextPrimary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Quảng cáo toàn màn hình" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-036">
+                                                    <rect key="frame" x="0" y="21.33" width="154.67" height="15.67"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" name="TextSecondary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.right" catalog="system" userLabel="Chevron" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-037">
+                                            <rect key="frame" x="325" y="34.0" width="10" height="12.33"/>
+                                            <color key="tintColor" systemColor="systemGray3Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="Hom-098"/>
+                                                <constraint firstAttribute="height" constant="16" id="Hom-099"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="Card"/>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="16"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                    <connections><action selector="didTapInterstitial" destination="-1" eventType="touchUpInside" id="Hom-038"/></connections>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="Hom-100"/>
+                                        <constraint firstItem="Hom-032" firstAttribute="leading" secondItem="Hom-031" secondAttribute="leading" constant="16" id="Hom-101"/>
+                                        <constraint firstItem="Hom-032" firstAttribute="centerY" secondItem="Hom-031" secondAttribute="centerY" id="Hom-102"/>
+                                        <constraint firstItem="Hom-034" firstAttribute="leading" secondItem="Hom-032" secondAttribute="trailing" constant="14" id="Hom-103"/>
+                                        <constraint firstItem="Hom-034" firstAttribute="centerY" secondItem="Hom-031" secondAttribute="centerY" id="Hom-104"/>
+                                        <constraint firstItem="Hom-037" firstAttribute="leading" secondItem="Hom-034" secondAttribute="trailing" constant="8" relation="greaterThanOrEqual" id="Hom-105"/>
+                                        <constraint firstItem="Hom-031" firstAttribute="trailing" secondItem="Hom-037" secondAttribute="trailing" constant="18" id="Hom-106"/>
+                                        <constraint firstItem="Hom-037" firstAttribute="centerY" secondItem="Hom-031" secondAttribute="centerY" id="Hom-107"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" customClass="TapCardControl" customModuleProvider="target" userLabel="Mini-app card" translatesAutoresizingMaskIntoConstraints="NO" id="Mad-000">
+                                    <rect key="frame" x="0" y="368" width="353" height="80"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" userLabel="Icon background" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mad-001">
+                                            <rect key="frame" x="16" y="16" width="48" height="48"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="safari.fill" catalog="system" userLabel="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Mad-002">
+                                                    <rect key="frame" x="11" y="11.33" width="26" height="25.67"/>
+                                                    <color key="tintColor" name="Primary"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="Mad-008"/>
+                                                        <constraint firstAttribute="height" constant="26" id="Mad-009"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" name="IconBackground"/>
+                                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="24"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="48" id="Mad-010"/>
+                                                <constraint firstAttribute="height" constant="48" id="Mad-011"/>
+                                                <constraint firstItem="Mad-002" firstAttribute="centerX" secondItem="Mad-001" secondAttribute="centerX" id="Mad-012"/>
+                                                <constraint firstItem="Mad-002" firstAttribute="centerY" secondItem="Mad-001" secondAttribute="centerY" id="Mad-013"/>
+                                            </constraints>
+                                        </view>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" userLabel="Texts" userInteractionEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mad-003">
+                                            <rect key="frame" x="78.0" y="21.67" width="154.67" height="37"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Mini-app trực tiếp" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mad-004">
+                                                    <rect key="frame" x="0" y="0" width="154.67" height="19.33"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <color key="textColor" name="TextPrimary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="openMiniApp, không cần quảng cáo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mad-005">
+                                                    <rect key="frame" x="0" y="21.33" width="154.67" height="15.67"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" name="TextSecondary"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.right" catalog="system" userLabel="Chevron" translatesAutoresizingMaskIntoConstraints="NO" id="Mad-006">
+                                            <rect key="frame" x="325" y="34.0" width="10" height="12.33"/>
+                                            <color key="tintColor" systemColor="systemGray3Color"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="Mad-014"/>
+                                                <constraint firstAttribute="height" constant="16" id="Mad-015"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="Card"/>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="16"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                    <connections><action selector="didTapMiniApp" destination="-1" eventType="touchUpInside" id="Mad-007"/></connections>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="Mad-016"/>
+                                        <constraint firstItem="Mad-001" firstAttribute="leading" secondItem="Mad-000" secondAttribute="leading" constant="16" id="Mad-017"/>
+                                        <constraint firstItem="Mad-001" firstAttribute="centerY" secondItem="Mad-000" secondAttribute="centerY" id="Mad-018"/>
+                                        <constraint firstItem="Mad-003" firstAttribute="leading" secondItem="Mad-001" secondAttribute="trailing" constant="14" id="Mad-019"/>
+                                        <constraint firstItem="Mad-003" firstAttribute="centerY" secondItem="Mad-000" secondAttribute="centerY" id="Mad-020"/>
+                                        <constraint firstItem="Mad-006" firstAttribute="leading" secondItem="Mad-003" secondAttribute="trailing" constant="8" relation="greaterThanOrEqual" id="Mad-021"/>
+                                        <constraint firstItem="Mad-000" firstAttribute="trailing" secondItem="Mad-006" secondAttribute="trailing" constant="18" id="Mad-022"/>
+                                        <constraint firstItem="Mad-006" firstAttribute="centerY" secondItem="Mad-000" secondAttribute="centerY" id="Mad-023"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" userLabel="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-Set">
+                            <rect key="frame" x="333" y="14" width="40" height="40"/>
+                            <accessibility key="accessibilityConfiguration" label="Cài đặt"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Hom-SeW"/>
+                                <constraint firstAttribute="height" constant="40" id="Hom-SeH"/>
+                            </constraints>
+                            <color key="tintColor" name="TextPrimary"/>
+                            <state key="normal" image="gearshape" catalog="system"/>
+                            <connections>
+                                <action selector="didTapSettings" destination="-1" eventType="touchUpInside" id="Hom-SeA"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Hom-003" firstAttribute="top" secondItem="Hom-ScC" secondAttribute="top" constant="16" id="Hom-108"/>
+                        <constraint firstItem="Hom-003" firstAttribute="leading" secondItem="Hom-ScC" secondAttribute="leading" constant="20" id="Hom-109"/>
+                        <constraint firstItem="Hom-004" firstAttribute="top" secondItem="Hom-003" secondAttribute="bottom" constant="28" id="Hom-110"/>
+                        <constraint firstItem="Hom-004" firstAttribute="leading" secondItem="Hom-ScC" secondAttribute="leading" constant="20" id="Hom-111"/>
+                        <constraint firstItem="Hom-ScC" firstAttribute="trailing" secondItem="Hom-004" secondAttribute="trailing" constant="20" id="Hom-112"/>
+                        <constraint firstItem="Hom-004" firstAttribute="width" secondItem="Hom-ScF" secondAttribute="width" constant="-40" id="Hom-ScW"/>
+                        <constraint firstItem="Hom-005" firstAttribute="top" secondItem="Hom-004" secondAttribute="bottom" constant="6" id="Hom-113"/>
+                        <constraint firstItem="Hom-005" firstAttribute="leading" secondItem="Hom-ScC" secondAttribute="leading" constant="20" id="Hom-114"/>
+                        <constraint firstItem="Hom-ScC" firstAttribute="trailing" secondItem="Hom-005" secondAttribute="trailing" constant="20" id="Hom-115"/>
+                        <constraint firstItem="Hom-006" firstAttribute="top" secondItem="Hom-005" secondAttribute="bottom" constant="28" id="Hom-116"/>
+                        <constraint firstItem="Hom-006" firstAttribute="leading" secondItem="Hom-ScC" secondAttribute="leading" constant="20" id="Hom-117"/>
+                        <constraint firstItem="Hom-ScC" firstAttribute="trailing" secondItem="Hom-006" secondAttribute="trailing" constant="20" id="Hom-118"/>
+                        <constraint firstItem="Hom-ScC" firstAttribute="bottom" secondItem="Hom-006" secondAttribute="bottom" constant="20" id="Hom-CfB"/>
+                        <constraint firstItem="Hom-Set" firstAttribute="centerY" secondItem="Hom-003" secondAttribute="centerY" id="Hom-SeY"/>
+                        <constraint firstItem="Hom-ScC" firstAttribute="trailing" secondItem="Hom-Set" secondAttribute="trailing" constant="12" id="Hom-SeT"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Hom-ScC"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Hom-ScF"/>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="KalapaAdsSDK" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" userLabel="Version" translatesAutoresizingMaskIntoConstraints="NO" id="Hom-039">
+                    <rect key="frame" x="142.67" y="792.67" width="108" height="13.33"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                    <color key="textColor" name="TextSecondary"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <viewLayoutGuide key="safeArea" id="Hom-002"/>
+            <color key="backgroundColor" name="Background"/>
+            <constraints>
+                <constraint firstItem="Hom-Scr" firstAttribute="top" secondItem="Hom-002" secondAttribute="top" id="Hom-ScT"/>
+                <constraint firstItem="Hom-Scr" firstAttribute="leading" secondItem="Hom-002" secondAttribute="leading" id="Hom-ScL"/>
+                <constraint firstItem="Hom-002" firstAttribute="trailing" secondItem="Hom-Scr" secondAttribute="trailing" id="Hom-ScR"/>
+                <constraint firstItem="Hom-039" firstAttribute="top" secondItem="Hom-Scr" secondAttribute="bottom" constant="8" id="Hom-ScB"/>
+                <constraint firstItem="Hom-039" firstAttribute="centerX" secondItem="Hom-002" secondAttribute="centerX" id="Hom-119"/>
+                <constraint firstItem="Hom-002" firstAttribute="bottom" secondItem="Hom-039" secondAttribute="bottom" constant="12" id="Hom-120"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="AppLogo" width="1605" height="569"/>
+        <image name="rectangle.grid.1x2.fill" catalog="system" width="128" height="128"/>
+        <image name="swift" catalog="system" width="128" height="128"/>
+        <image name="rectangle.bottomhalf.filled" catalog="system" width="128" height="128"/>
+        <image name="rectangle.portrait.fill" catalog="system" width="128" height="128"/>
+        <image name="chevron.right" catalog="system" width="128" height="128"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <namedColor name="Background"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="Card"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="IconBackground"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="Primary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="TextPrimary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="TextSecondary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <systemColor name="systemGray3Color"><color red="0.78" green="0.78" blue="0.8" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></systemColor>
+    </resources>
+</document>

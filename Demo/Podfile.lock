@@ -1,0 +1,16 @@
+PODS:
+  - KalapaAdsSDK (0.1.0)
+
+DEPENDENCIES:
+  - KalapaAdsSDK (~> 0.1)
+
+SPEC REPOS:
+  trunk:
+    - KalapaAdsSDK
+
+SPEC CHECKSUMS:
+  KalapaAdsSDK: f3b538dacc8b6f1aea0465d22aa64d7a0f38dcd8
+
+PODFILE CHECKSUM: 537fe0dee8310bc96a266df074209d493a2ab41b
+
+COCOAPODS: 1.16.2

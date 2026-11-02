@@ -1,0 +1,7 @@
+platform :ios, '15.1'
+
+target 'KalapaAdsDemo' do
+  use_frameworks!
+
+  pod 'KalapaAdsSDK', '~> 0.1'
+end

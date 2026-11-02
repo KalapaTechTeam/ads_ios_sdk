@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InterstitialDemoViewController" customModule="KalapaAdsDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="adUnitLabel" destination="Int-006" id="Int-027"/>
+                <outlet property="adTypeControl" destination="Int-008" id="Int-028"/>
+                <outlet property="statusBadge" destination="Int-013" id="Int-029"/>
+                <outlet property="logTextView" destination="Int-026" id="Int-030"/>
+                <outlet property="view" destination="Int-001" id="Int-031"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Int-001">
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" userLabel="Content" translatesAutoresizingMaskIntoConstraints="NO" id="Int-003">
+                    <rect key="frame" x="20" y="71" width="353" height="735"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" userLabel="Ad unit" translatesAutoresizingMaskIntoConstraints="NO" id="Int-004">
+                            <rect key="frame" x="0" y="0" width="353" height="33"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="AD UNIT" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Int-005">
+                                    <rect key="frame" x="0" y="0" width="353" height="13.33"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                    <color key="textColor" name="TextSecondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="—" textAlignment="natural" lineBreakMode="middleTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" userLabel="Ad unit id" translatesAutoresizingMaskIntoConstraints="NO" id="Int-006">
+                                    <rect key="frame" x="0" y="17.33" width="353" height="15.67"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                    <color key="textColor" name="TextPrimary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" userLabel="Ad type" translatesAutoresizingMaskIntoConstraints="NO" id="Int-007">
+                            <rect key="frame" x="0" y="49" width="353" height="52.33"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="KIỂU HIỂN THỊ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Int-010">
+                                    <rect key="frame" x="0" y="0" width="353" height="13.33"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                    <color key="textColor" name="TextSecondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" userLabel="Ad type control" translatesAutoresizingMaskIntoConstraints="NO" id="Int-008">
+                                    <rect key="frame" x="0" y="21.33" width="353" height="32"/>
+                                    <segments><segment title="overlay"/><segment title="interstitial"/></segments>
+                                    <connections><action selector="didChangeAdType" destination="-1" eventType="valueChanged" id="Int-009"/></connections>
+                                </segmentedControl>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="8" alignment="center" userLabel="Status row" translatesAutoresizingMaskIntoConstraints="NO" id="Int-011">
+                            <rect key="frame" x="0" y="117.33" width="353" height="22.33"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Trạng thái" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Int-012">
+                                    <rect key="frame" x="0" y="3.33" width="60.67" height="15.67"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" name="TextSecondary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" customClass="StatusBadgeView" customModuleProvider="target" userLabel="Status badge" translatesAutoresizingMaskIntoConstraints="NO" id="Int-013">
+                                    <rect key="frame" x="68.67" y="0" width="80" height="22.33"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Chưa tải" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" userLabel="Status text" translatesAutoresizingMaskIntoConstraints="NO" id="Int-014">
+                                            <rect key="frame" x="10" y="4.0" width="60" height="14.33"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                            <color key="textColor" name="TextSecondary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="10"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                                    <connections><outlet property="textLabel" destination="Int-014" id="Int-015"/></connections>
+                                    <constraints>
+                                        <constraint firstItem="Int-014" firstAttribute="top" secondItem="Int-013" secondAttribute="top" constant="4" id="Int-032"/>
+                                        <constraint firstItem="Int-014" firstAttribute="leading" secondItem="Int-013" secondAttribute="leading" constant="10" id="Int-033"/>
+                                        <constraint firstAttribute="trailing" secondItem="Int-014" secondAttribute="trailing" constant="10" firstItem="Int-013" id="Int-034"/>
+                                        <constraint firstAttribute="bottom" secondItem="Int-014" secondAttribute="bottom" constant="4" firstItem="Int-013" id="Int-035"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" userLabel="Spacer" horizontalHuggingPriority="1" translatesAutoresizingMaskIntoConstraints="NO" id="Int-016">
+                                    <rect key="frame" x="156.67" y="11.33" width="196.33" height="0"/>
+                                </view>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="horizontal" spacing="12" distribution="fillEqually" userLabel="Buttons" translatesAutoresizingMaskIntoConstraints="NO" id="Int-017">
+                            <rect key="frame" x="0" y="155.67" width="353" height="48"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" userLabel="Show" translatesAutoresizingMaskIntoConstraints="NO" id="Int-018">
+                                    <rect key="frame" x="0" y="0" width="170.67" height="48"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Hiện quảng cáo" cornerStyle="large"><fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/><color key="baseBackgroundColor" name="Primary"/></buttonConfiguration>
+                                    <connections><action selector="didTapShow" destination="-1" eventType="touchUpInside" id="Int-019"/></connections>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="48" id="Int-036"/>
+                                    </constraints>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" userLabel="Reload" translatesAutoresizingMaskIntoConstraints="NO" id="Int-020">
+                                    <rect key="frame" x="182.67" y="0" width="170.33" height="48"/>
+                                    <buttonConfiguration key="configuration" style="tinted" title="Tải lại" cornerStyle="large"><fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/><color key="baseForegroundColor" name="Primary"/><color key="baseBackgroundColor" name="Primary"/></buttonConfiguration>
+                                    <connections><action selector="didTapReload" destination="-1" eventType="touchUpInside" id="Int-021"/></connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" userLabel="Event log" verticalHuggingPriority="200" verticalCompressionResistancePriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="Int-022">
+                            <rect key="frame" x="0" y="219.67" width="353" height="515.33"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nhật ký sự kiện" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Int-023">
+                                    <rect key="frame" x="16.0" y="14" width="109.67" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <color key="textColor" name="TextPrimary"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" userLabel="Clear" translatesAutoresizingMaskIntoConstraints="NO" id="Int-024">
+                                    <rect key="frame" x="297.67" y="7.67" width="49.33" height="31"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Xoá" cornerStyle="large"><fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="14"/><color key="baseForegroundColor" name="Primary"/></buttonConfiguration>
+                                    <connections><action selector="didTapClearLog" destination="-1" eventType="touchUpInside" id="Int-025"/></connections>
+                                </button>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" userLabel="Log text" translatesAutoresizingMaskIntoConstraints="NO" id="Int-026">
+                                    <rect key="frame" x="10" y="38.0" width="333" height="467.33"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" name="Card"/>
+                            <userDefinedRuntimeAttributes><userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius"><real key="value" value="16"/></userDefinedRuntimeAttribute></userDefinedRuntimeAttributes>
+                            <constraints>
+                                <constraint firstItem="Int-023" firstAttribute="top" secondItem="Int-022" secondAttribute="top" constant="14" id="Int-037"/>
+                                <constraint firstItem="Int-023" firstAttribute="leading" secondItem="Int-022" secondAttribute="leading" constant="16" id="Int-038"/>
+                                <constraint firstItem="Int-022" firstAttribute="trailing" secondItem="Int-024" secondAttribute="trailing" constant="6" id="Int-039"/>
+                                <constraint firstItem="Int-024" firstAttribute="centerY" secondItem="Int-023" secondAttribute="centerY" id="Int-040"/>
+                                <constraint firstItem="Int-026" firstAttribute="top" secondItem="Int-023" secondAttribute="bottom" constant="6" id="Int-041"/>
+                                <constraint firstItem="Int-026" firstAttribute="leading" secondItem="Int-022" secondAttribute="leading" constant="10" id="Int-042"/>
+                                <constraint firstItem="Int-022" firstAttribute="trailing" secondItem="Int-026" secondAttribute="trailing" constant="10" id="Int-043"/>
+                                <constraint firstItem="Int-022" firstAttribute="bottom" secondItem="Int-026" secondAttribute="bottom" constant="10" id="Int-044"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <viewLayoutGuide key="safeArea" id="Int-002"/>
+            <color key="backgroundColor" name="Background"/>
+            <constraints>
+                <constraint firstItem="Int-003" firstAttribute="top" secondItem="Int-002" secondAttribute="top" constant="12" id="Int-045"/>
+                <constraint firstItem="Int-003" firstAttribute="leading" secondItem="Int-002" secondAttribute="leading" constant="20" id="Int-046"/>
+                <constraint firstItem="Int-002" firstAttribute="trailing" secondItem="Int-003" secondAttribute="trailing" constant="20" id="Int-047"/>
+                <constraint firstItem="Int-002" firstAttribute="bottom" secondItem="Int-003" secondAttribute="bottom" constant="12" id="Int-048"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Background"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="Card"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="IconBackground"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="Primary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="TextPrimary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+        <namedColor name="TextSecondary"><color red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/></namedColor>
+    </resources>
+</document>
