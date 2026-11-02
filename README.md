@@ -8,9 +8,7 @@ SDK hiển thị quảng cáo của Kalapa Ads Network, chủ yếu là sản ph
 - **Mini-app:** khi user bấm ad, SDK mở trang mini-app toàn màn hình. App cũng có thể tự mở mini-app không qua ad, ví dụ khi user bấm thông báo.
 - **Banner và interstitial dạng HTML:** định dạng cũ chuyển sang từ KalapaScoreSDK, xem [mục 8](#8-banner-và-interstitial-định-dạng-cũ).
 
-Tài liệu liên quan:
-- [docs/ERRORS.md](docs/ERRORS.md): mã lỗi và log.
-- [docs/native-ads-test-scenarios.md](docs/native-ads-test-scenarios.md): kịch bản test.
+Mã lỗi và log: [docs/ERRORS.md](docs/ERRORS.md).
 
 ---
 
@@ -43,7 +41,16 @@ pod repo update
 pod install
 ```
 
-SDK được phát hành dạng binary (`KalapaAdsSDK.xcframework` kèm `KalapaAdsSDK.bundle`) trên [GitHub](https://github.com/KalapaTechTeam/ads_ios_sdk).
+SDK được phát hành dạng binary (`KalapaAdsSDK.xcframework` kèm `KalapaAdsSDK.bundle`) trên [GitHub](https://github.com/KalapaTechTeam/ads_ios_sdk/releases). Khi build, CocoaPods tự copy `KalapaAdsSDK.bundle` (giao diện các template, màn mini-app, privacy manifest) vào app; app không cần làm gì thêm.
+
+**Cập nhật lên bản mới:**
+
+```bash
+pod repo update
+pod update KalapaAdsSDK
+```
+
+**Gặp lỗi `Unable to find a specification for KalapaAdsSDK`:** máy chưa có danh sách pod mới nhất. Chạy `pod repo update` rồi `pod install` lại.
 
 ## 3. Khởi tạo
 
@@ -258,6 +265,23 @@ KalapaAds.miniAppListener = tracker
 
 `reason` cho biết mini-app đóng vì sao: `CALLBACK` (trang tự đóng), `CLOSE_BUTTON`, `BACK_AT_ROOT` (vuốt back ở trang đầu), `HOST_DISMISS`. `result` (`SUCCESS`, `FAILURE`, `CANCEL`, `CLOSE`) chỉ có khi `reason` là `CALLBACK`. Đây là điều trang báo lại, không phải xác nhận nghiệp vụ từ backend.
 
+### Nút đóng của SDK (`showsCloseButton`)
+
+Màn mini-app có thể hiện thêm nút × của SDK ở góc trên bên phải, đè lên trang web.
+
+| Cách mở | Nút × của SDK | Đổi được không |
+|---|---|---|
+| User bấm ad (6.1) | **Không có** | Không |
+| `KalapaAds.openMiniApp` (6.3) | **Có**, mặc định `showsCloseButton: true` | Có: truyền `showsCloseButton: false` để tắt |
+
+Không có nút × thì user vẫn đóng mini-app được bằng:
+- nút đóng hoặc nút hoàn tất của chính trang (trang gọi callback, `reason = CALLBACK`);
+- vuốt từ mép trái màn hình khi đang ở trang đầu tiên (`reason = BACK_AT_ROOT`). Ở các trang sau, vuốt từ mép trái là quay lại trang trước.
+
+Mini-app không đóng được bằng cách vuốt xuống.
+
+Nếu trang đã có nút đóng riêng ở góc trên bên phải (ví dụ trang MoneyIQ), hãy truyền `showsCloseButton: false`, nếu không hai nút sẽ đè lên nhau.
+
 ### 6.3 Mở mini-app không qua ad (ví dụ từ thông báo)
 
 ```swift
@@ -275,14 +299,48 @@ KalapaAds.openMiniApp(url: nil, from: nil, showsCloseButton: true) { outcome in
 |---|---|
 | `url` | Trang cần mở. `nil` thì mở `KalapaAdsConfig.miniAppURL` |
 | `from` | View controller dùng để present. `nil` thì SDK tự tìm màn hình trên cùng |
-| `showsCloseButton` | Hiện nút đóng của SDK phía trên trang |
+| `showsCloseButton` | Mặc định `true`: hiện nút × của SDK ở góc trên bên phải. Truyền `false` nếu trang đã có nút đóng riêng ở vị trí đó. Xem [Nút đóng của SDK](#nút-đóng-của-sdk-showsclosebutton) |
 | `completion` | Gọi đúng một lần trên main thread: `.failed` nếu không mở được, `.closed` sau khi màn hình đã đóng |
 
 **Giới hạn host:** host của `url` phải trùng host của `miniAppURL`, hoặc nằm trong `miniAppAllowedHosts`. Nếu không, SDK trả `MINIAPP_INVALID_URL` và không mở. Quy định này để dữ liệu cá nhân trong config (số CCCD, số điện thoại…) không bị gửi sang trang lạ.
 
 Luồng này không gửi event về `miniAppListener`, cũng không gửi về backend quảng cáo.
 
-**Mở từ thông báo:** đặt `UNUserNotificationCenter.current().delegate` ngay trong `didFinishLaunching`. Nếu đặt muộn hơn, app sẽ không nhận được lượt bấm thông báo khi app đang bị tắt. Trong `userNotificationCenter(_:didReceive:withCompletionHandler:)`, gọi `openMiniApp` với `from: nil`, SDK sẽ tự present lên màn hình đang được đưa lên. App Example có code mẫu đầy đủ trong [DemoNotifications.swift](Example/KalapaAdsExample/Common/DemoNotifications.swift).
+### 6.4 Mở mini-app khi user bấm thông báo
+
+Đặt delegate của `UNUserNotificationCenter` **ngay trong `didFinishLaunching`**. Nếu đặt muộn hơn, app sẽ không nhận được lượt bấm khi thông báo làm app khởi động từ trạng thái đã tắt.
+
+```swift
+import KalapaAdsSDK
+import UserNotifications
+
+@main
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        KalapaAds.initialize(config: KalapaAdsConfig(miniAppURL: URL(string: "https://moneyiq.vn/mini-app")))
+        UNUserNotificationCenter.current().delegate = self
+        return true
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        // "mini_app_url" là khóa do app tự đặt trong payload thông báo; không có thì mở miniAppURL.
+        let url = (response.notification.request.content.userInfo["mini_app_url"] as? String)
+            .flatMap(URL.init(string:))
+        Task { @MainActor in
+            KalapaAds.openMiniApp(url: url, from: nil) { outcome in
+                if case .failed(let error) = outcome { print(error) }
+            }
+            completionHandler()
+        }
+    }
+}
+```
+
+Truyền `from: nil` để SDK tự present mini-app lên màn hình đang được đưa lên foreground. Cách này chạy được cả khi app đang mở, đang ở background, hoặc vừa khởi động từ thông báo.
 
 ---
 
@@ -347,12 +405,8 @@ KLPInterstitialAd.load(with: "<ad unit id>", request: KLPRequest(), adType: "int
 - [ ] Nếu mở mini-app từ thông báo: đặt delegate thông báo trong `didFinishLaunching`. Đã test cả lúc app đang mở, ở background và đã bị tắt.
 - [ ] Đã gửi Kalapa bundle ID của app: SDK dùng nó làm `source` khi mở mini-app.
 
-## 10. App Example
+## 10. Phiên bản
 
-`Example/` có app demo cho mọi tính năng: native ad (UIKit và SwiftUI), mini-app, gửi thông báo thử, banner, interstitial. Màn Settings cho nhập ad unit và thông tin user.
-
-```bash
-cd Example
-pod install
-open KalapaAdsExample.xcworkspace
-```
+| Version | Ngày | Thay đổi |
+|---|---|---|
+| 0.1.0 | 02/11/2026 | Bản đầu tiên: native ad (UIKit, SwiftUI), mini-app, `openMiniApp`, log lỗi, banner và interstitial |

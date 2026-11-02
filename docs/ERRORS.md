@@ -187,4 +187,3 @@ Dấu `?` nghĩa là chỉ có khi có giá trị.
 | Mini-app trắng hoặc hiện màn hình thử lại | Log `MINIAPP_LOAD_FAILED` / `MINIAPP_CRASHED` |
 | Cần xem log của một máy | Lọc trên `sdk-log.kalapa.vn` theo `source = kalapa-ads` và `metadata.device_id` |
 
-Kịch bản test cho từng lỗi: [native-ads-test-scenarios.md](native-ads-test-scenarios.md).
