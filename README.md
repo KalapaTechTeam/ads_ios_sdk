@@ -403,7 +403,6 @@ KLPInterstitialAd.load(with: "<ad unit id>", request: KLPRequest(), adType: "int
 - [ ] Ẩn slot khi nhận `.noFill`, `.failed` hoặc `didRequestClose`.
 - [ ] Giữ `NativeAdController` theo vị trí đặt ad, không theo view hay cell. Gọi `dispose()` khi bỏ vị trí ad.
 - [ ] Nếu mở mini-app từ thông báo: đặt delegate thông báo trong `didFinishLaunching`. Đã test cả lúc app đang mở, ở background và đã bị tắt.
-- [ ] Đã gửi Kalapa bundle ID của app: SDK dùng nó làm `source` khi mở mini-app.
 
 ## 10. Phiên bản
 
